@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct Ressortsuche: View {
+    @StateObject private var snowviewmodel = SnowApiViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Form{
+                
+            }
+        }
     }
 }
 

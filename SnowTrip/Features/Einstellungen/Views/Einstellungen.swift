@@ -14,6 +14,7 @@ struct Einstellungen: View {
         Image("LoginRegister")
             .resizable()
             .ignoresSafeArea()
+            .blur(radius: 3.0)
             .overlay(
             Button("Abmelden"){
                 userViewModel.logout()
