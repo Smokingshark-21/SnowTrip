@@ -18,46 +18,58 @@ struct RessortByIdView: View {
                 .blur(radius: 3.0)
             VStack{
                 ForEach(snowviewmodel.ressortbyid,id: \.resortName){re in
-                    
-                    AsyncImage(url: re.lgTrailMapURL){
-                        image in
-                        image
-                            .resizable()
-                            .frame(minWidth: 300, minHeight: 300)
+                    VStack{
+                        Text("Ressort")
+                            .font(.title)
+                            .foregroundColor(.white)
                         
-                    }placeholder: {
-                        ProgressView()
-                    }
-                    Text("Ressort Namme")
-                        .foregroundColor(.white)
-                    Text(re.resortName ?? "")
-                        .foregroundColor(.white)
-                    Text("Resoort Satus")
-                        .foregroundColor(.white)
-                    HStack{
-                        Text(re.resortStatus ?? "" == "1" ? "Geöffnet" : "Geschlossen")
-                        houseiconView(status: re.resortStatus ?? "")
-                    }
-                        .foregroundColor(.white)
-                    if re.weekdayHours == ""{
-                       
-                    }else {
-                        Text("Öffnungszeiten")
-                            .foregroundColor(.white)
-                        Text(re.weekdayHours ?? "")
-                            .foregroundColor(.white)
-                        Text(re.weekendHours ?? "")
+                        Text(re.resortName ?? "")
+                            .bold()
                             .foregroundColor(.white)
                     }
+                    .frame(width: 400, height: 50)
+                    .padding()
+                    .background(Color.black.opacity(0.4))
+                    .offset(y: -250)
                     
-                    Text("Nachtabfahrten")
+                    VStack{
+                        HStack{
+                            Text(re.resortStatus ?? "" == "1" ? "Geöffnet" : "Geschlossen")
+                            houseiconView(status: re.resortStatus ?? "")
+                        }
                         .foregroundColor(.white)
-                    Text(re.nightSkiing ?? "" == "yes" ? "Ja" : "Nein")
-                        .foregroundColor(.white)
+                    }
+                    .offset(x:-100 ,y: -200)
+                    
+                    VStack{
+                        if re.weekdayHours == ""{
+                            
+                        }else {
+                            Text("Öffnungszeiten")
+                                .foregroundColor(.white)
+                            Text(re.weekdayHours ?? "")
+                                .foregroundColor(.white)
+                            Text(re.weekendHours ?? "")
+                                .foregroundColor(.white)
+                        }
+                        
+                        Text("Nachtabfahrten")
+                            .foregroundColor(.white)
+                        Text(re.nightSkiing ?? "" == "yes" ? "Ja" : "Nein")
+                            .foregroundColor(.white)
+                        
+                        AsyncImage(url: re.logo){
+                            image in
+                            image
+                                .resizable()
+                                .frame(minWidth: 100, minHeight: 300)
+                            
+                        }placeholder: {
+                            Image(systemName: "house")
+                        }
+                    }
                 }
             }
-            .frame(width: 400,height: 500)
-            .background(Color.black.opacity(0.4))
             .onAppear {
                 Task {
                     await snowviewmodel.fetchDataById(id: id)

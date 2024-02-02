@@ -8,7 +8,7 @@
 import Foundation
 
 struct Idresponse : Codable{
-    let items : [Ressort]
+    var items : [Ressort]
 }
 struct Ressort : Codable, Hashable {
     
@@ -64,9 +64,9 @@ struct Ressort : Codable, Hashable {
     let weatherDay4_WindDirection: String?
     let weatherDay5_WindDirection: String?
     let SnoCountryResortLink: String?
-    let tnTrailMapURL: URL
-    let lgTrailMapURL: URL
-    let logo: URL
+    let tnTrailMapURL: String
+    let lgTrailMapURL: String
+    var logo: String
     let timezone: String?
     let resortAddress: String?
     let maxXCSkiTrails: String?

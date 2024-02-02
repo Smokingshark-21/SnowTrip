@@ -39,6 +39,12 @@ class Searchrepo {
         print(url)
         
         let (data, _ ) = try await URLSession.shared.data(from: url)
-        return try JSONDecoder().decode(Idresponse.self, from: data).items
+        let response = try JSONDecoder().decode(Idresponse.self, from: data)
+        let ressort = response.items.map { ressort in
+            var newressort = ressort
+            newressort.logo = ressort.logo.replacingOccurrences(of: "http://", with: "https://")
+            return newressort
+        }
+        return ressort
     }
 }
