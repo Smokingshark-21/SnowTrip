@@ -26,7 +26,7 @@ struct LoginView: View {
                 
                 VStack(spacing: 10) {
                     
-                    NavigationLink(destination: AnmeldenView().navigationBarHidden(true)) {
+                    NavigationLink(destination: AnmeldenView()) {
                         Text("Anmelden")
                             .frame(width: 300, height: 10)
                             .foregroundColor(.black)
@@ -36,9 +36,8 @@ struct LoginView: View {
                                     .stroke(Color.black, lineWidth: 2)
                             )
                     }
-                    .navigationBarHidden(true)
                     
-                    NavigationLink(destination: RegistrierenView().navigationBarHidden(true)) {
+                    NavigationLink(destination: RegistrierenView()) {
                         Text("Registrieren")
                             .frame(width: 300, height: 10)
                             .foregroundColor(.white)
@@ -46,7 +45,6 @@ struct LoginView: View {
                             .background(Color.black)
                             .cornerRadius(10)
                     }
-                    .navigationBarHidden(true)
                 }
                 
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)

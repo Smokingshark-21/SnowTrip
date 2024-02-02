@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct searchresponse: Codable {
-    let items : [Item]
+struct regioresponse: Codable {
+    let items : [Items]
 }
 
-struct Item: Codable {
+struct Items: Codable,Hashable {
     let id: String
     let resortName: String
     let state: String

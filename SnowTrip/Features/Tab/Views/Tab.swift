@@ -30,7 +30,8 @@ struct Tab: View {
            
         }
         .onAppear() {
-            UITabBar.appearance().backgroundColor = .lightText
+            UITabBar.appearance().backgroundColor = .black
+            UITabBar.appearance().unselectedItemTintColor = .gray
                 
         }
     }

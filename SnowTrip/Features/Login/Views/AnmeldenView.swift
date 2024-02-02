@@ -17,19 +17,26 @@ struct AnmeldenView: View {
             Image("LoginRegister")
                 .resizable()
                 .ignoresSafeArea()
+                .blur(radius: 2.0)
             VStack(){
                 Spacer()
                 Spacer()
                 TextField("Email",text: $email)
                     .frame(width: 300, height: 10)
                     .padding()
-                    .background(Color.white)
+                    .background(Color.gray.opacity(0.5))
                     .cornerRadius(10)
+                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
+
                 SecureField("Passwort",text: $pass)
                     .frame(width: 300, height: 10)
                     .padding()
-                    .background(Color.white)
+                    .background(Color.gray.opacity(0.5))
                     .cornerRadius(10)
+                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
+
                 Button(action: {
                     
                 }, label: {

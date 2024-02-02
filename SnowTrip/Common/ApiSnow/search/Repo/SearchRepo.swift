@@ -6,17 +6,16 @@
 //
 
 import Foundation
-
 class Searchrepo {
     
-    static func  fetchresort (searchString : String)async throws -> [Item]{
+    static func  fetchregion (searchString : String)async throws -> [Items]{
         var urlString = ""
         
         if searchString.isEmpty{
-            urlString = "http://feeds.snocountry.net/getResortList.php?apiKey=SnoCountry.example&regions=usa&output=json"
+            urlString = "https://feeds.snocountry.net/getResortList.php?apiKey=SnoCountry.example&regions=usa&output=json"
         }
         else {
-            urlString = "http://feeds.snocountry.net/getResortList.php?apiKey=SnoCountry.example&regions=\(searchString)&output=json"
+            urlString = "https://feeds.snocountry.net/getResortList.php?apiKey=SnoCountry.example&regions=\(searchString)&output=json"
         }
         
         
@@ -26,6 +25,20 @@ class Searchrepo {
         print(url)
         
         let (data, _ ) = try await URLSession.shared.data(from: url)
-        return try JSONDecoder().decode(searchresponse.self, from: data).items
+        return try JSONDecoder().decode(regioresponse.self, from: data).items
+    }
+    
+    
+    static func  fetchResortById (id : String)async throws -> [Ressort]{
+        let urlString = "https://feeds.snocountry.net/getSnowReport.php?apiKey=SnoCountry.example&ids=\(id)"
+        
+        
+        guard let url = URL(string: urlString) else {
+            throw HTTPError.invalidURL
+        }
+        print(url)
+        
+        let (data, _ ) = try await URLSession.shared.data(from: url)
+        return try JSONDecoder().decode(Idresponse.self, from: data).items
     }
 }

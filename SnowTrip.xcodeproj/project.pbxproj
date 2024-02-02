@@ -52,10 +52,14 @@
 		9B51EC062B60DBA5003D087C /* Ressortsuche.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EC052B60DBA5003D087C /* Ressortsuche.swift */; };
 		9B51EC0A2B60DE9B003D087C /* GespeicherteRessort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EC092B60DE9B003D087C /* GespeicherteRessort.swift */; };
 		9B51EC0E2B60E0B3003D087C /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EC0D2B60E0B3003D087C /* Header.swift */; };
-		9BF50C5F2B63F3BE00AB3FF4 /* searchresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C5E2B63F3BE00AB3FF4 /* searchresponse.swift */; };
+		9B8B63F32B6BABCD00968734 /* offnungszeiten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */; };
+		9B8B63F72B6CEE7400968734 /* HouseiconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B63F62B6CEE7400968734 /* HouseiconView.swift */; };
+		9BF50C5F2B63F3BE00AB3FF4 /* regioresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C5E2B63F3BE00AB3FF4 /* regioresponse.swift */; };
 		9BF50C632B63F59600AB3FF4 /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C622B63F59600AB3FF4 /* SearchRepo.swift */; };
 		9BF50C662B63F64B00AB3FF4 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C652B63F64B00AB3FF4 /* HTTPError.swift */; };
 		9BF50C692B63F79D00AB3FF4 /* SnowApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C682B63F79D00AB3FF4 /* SnowApiViewModel.swift */; };
+		9BF50C932B67CFB100AB3FF4 /* Idresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C922B67CFB100AB3FF4 /* Idresponse.swift */; };
+		9BF50C952B67D49900AB3FF4 /* RessortByIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C942B67D49900AB3FF4 /* RessortByIdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,10 +82,14 @@
 		9B51EC052B60DBA5003D087C /* Ressortsuche.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ressortsuche.swift; sourceTree = "<group>"; };
 		9B51EC092B60DE9B003D087C /* GespeicherteRessort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GespeicherteRessort.swift; sourceTree = "<group>"; };
 		9B51EC0D2B60E0B3003D087C /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		9BF50C5E2B63F3BE00AB3FF4 /* searchresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchresponse.swift; sourceTree = "<group>"; };
+		9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offnungszeiten.swift; sourceTree = "<group>"; };
+		9B8B63F62B6CEE7400968734 /* HouseiconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseiconView.swift; sourceTree = "<group>"; };
+		9BF50C5E2B63F3BE00AB3FF4 /* regioresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regioresponse.swift; sourceTree = "<group>"; };
 		9BF50C622B63F59600AB3FF4 /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
 		9BF50C652B63F64B00AB3FF4 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		9BF50C682B63F79D00AB3FF4 /* SnowApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowApiViewModel.swift; sourceTree = "<group>"; };
+		9BF50C922B67CFB100AB3FF4 /* Idresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idresponse.swift; sourceTree = "<group>"; };
+		9BF50C942B67D49900AB3FF4 /* RessortByIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RessortByIdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +220,7 @@
 		9B51EBA82B5FCA29003D087C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9B8B63EF2B6BABA400968734 /* Components */,
 				9BF50C5C2B63F37800AB3FF4 /* ApiSnow */,
 				9B51EBF62B60D77D003D087C /* ViewModel */,
 				9B51EBEF2B60D243003D087C /* Manager */,
@@ -373,6 +382,31 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		9B8B63EF2B6BABA400968734 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B63F02B6BABAF00968734 /* Öffnungszeiten */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9B8B63F02B6BABAF00968734 /* Öffnungszeiten */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B63F12B6BABB900968734 /* View */,
+			);
+			name = "Öffnungszeiten";
+			path = "Öffnungszeiten";
+			sourceTree = "<group>";
+		};
+		9B8B63F12B6BABB900968734 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9BF50C5C2B63F37800AB3FF4 /* ApiSnow */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,7 +419,8 @@
 		9BF50C5D2B63F38800AB3FF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9BF50C5E2B63F3BE00AB3FF4 /* searchresponse.swift */,
+				9BF50C5E2B63F3BE00AB3FF4 /* regioresponse.swift */,
+				9BF50C922B67CFB100AB3FF4 /* Idresponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,6 +470,8 @@
 		9BF50C6B2B63F8BC00AB3FF4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9BF50C942B67D49900AB3FF4 /* RessortByIdView.swift */,
+				9B8B63F62B6CEE7400968734 /* HouseiconView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,19 +584,23 @@
 				9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */,
 				9B51EBEC2B60D1B8003D087C /* User.swift in Sources */,
 				9B51EC0A2B60DE9B003D087C /* GespeicherteRessort.swift in Sources */,
-				9BF50C5F2B63F3BE00AB3FF4 /* searchresponse.swift in Sources */,
+				9BF50C5F2B63F3BE00AB3FF4 /* regioresponse.swift in Sources */,
 				9B51EC062B60DBA5003D087C /* Ressortsuche.swift in Sources */,
 				9B51EBEA2B603C10003D087C /* RegistrierenView.swift in Sources */,
 				9B51EBF82B60D795003D087C /* Home.swift in Sources */,
 				9B51EC022B60DA41003D087C /* Tab.swift in Sources */,
+				9B8B63F32B6BABCD00968734 /* offnungszeiten.swift in Sources */,
 				9B51EBF12B60D252003D087C /* FirebaseManager.swift in Sources */,
+				9BF50C932B67CFB100AB3FF4 /* Idresponse.swift in Sources */,
 				9BF50C662B63F64B00AB3FF4 /* HTTPError.swift in Sources */,
 				9B51EB962B5FBB51003D087C /* SnowTrip.swift in Sources */,
+				9B8B63F72B6CEE7400968734 /* HouseiconView.swift in Sources */,
 				9BF50C632B63F59600AB3FF4 /* SearchRepo.swift in Sources */,
 				9B51EC0E2B60E0B3003D087C /* Header.swift in Sources */,
 				9B51EBEE2B60D1EA003D087C /* UserViewModel.swift in Sources */,
 				9B51EBAD2B5FCA93003D087C /* SnowAnima.swift in Sources */,
 				9B27AD732B625A7C00EB9F3E /* HomeViewModel.swift in Sources */,
+				9BF50C952B67D49900AB3FF4 /* RessortByIdView.swift in Sources */,
 				9B51EBFD2B60D816003D087C /* Einstellungen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +744,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -733,6 +775,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

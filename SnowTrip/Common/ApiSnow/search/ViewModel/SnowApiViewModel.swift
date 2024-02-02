@@ -6,21 +6,32 @@
 //
 
 import Foundation
-
+@MainActor
 class SnowApiViewModel: ObservableObject {
-    
     @Published var searchString = ""
     
     init(){
-        fetchData()
+        fetchDataRegion()
     }
     
-    @Published var news = [Item]()
+    @Published var items = [Items]()
+    @Published var ressortbyid = [Ressort]()
     
-    func fetchData() {
+    func fetchDataRegion() {
         Task {
             do {
-                self.news = try await Searchrepo.fetchresort(searchString: searchString)
+                self.items = try await Searchrepo.fetchregion(searchString: searchString)
+                
+            } catch {
+                print("Request failed with error: \(error)")
+            }
+        }
+    }
+    
+    func fetchDataById(id: String) async {
+        Task {
+            do {
+                self.ressortbyid = try await Searchrepo.fetchResortById(id: id)
             } catch {
                 print("Request failed with error: \(error)")
             }
