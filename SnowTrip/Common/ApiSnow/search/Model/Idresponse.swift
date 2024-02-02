@@ -65,7 +65,7 @@ struct Ressort : Codable, Hashable {
     let weatherDay5_WindDirection: String?
     let SnoCountryResortLink: String?
     let tnTrailMapURL: String
-    let lgTrailMapURL: String
+    var lgTrailMapURL: String
     var logo: String
     let timezone: String?
     let resortAddress: String?

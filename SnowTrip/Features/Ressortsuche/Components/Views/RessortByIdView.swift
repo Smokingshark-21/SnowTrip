@@ -10,78 +10,80 @@ import SwiftUI
 struct RessortByIdView: View {
     @EnvironmentObject private var snowviewmodel : SnowApiViewModel
     let id : String
+    let name : String
     var body: some View {
-        ZStack{
-            Image("LoginRegister")
-                .resizable()
-                .ignoresSafeArea()
-                .blur(radius: 3.0)
-            VStack{
-                ForEach(snowviewmodel.ressortbyid,id: \.resortName){re in
+        NavigationStack{
+            ZStack{
+                Image("LoginRegister")
+                    .resizable()
+                    .ignoresSafeArea()
+                    .blur(radius: 3.0)
                     VStack{
-                        Text("Ressort")
-                            .font(.title)
-                            .foregroundColor(.white)
+                        ForEach(snowviewmodel.ressortbyid,id: \.resortName){re in
+
+                            VStack{
+                                
+                                HStack{
+                                    Text(re.resortStatus ?? "" == "1" ? "Geöffnet" : "Geschlossen")
+                                    if re.resortStatus == "1" {
+                                        Image(systemName: "house.and.flag")
+                                            .foregroundColor(.green)
+                                    }else {
+                                        Image(systemName: "house.and.flag")
+                                            .foregroundColor(.red)
+                                    }
+                                }
+                                .foregroundColor(.white)
+                            }
+                            .offset(x:-100 )
+                            
+                            VStack{
+                                if re.weekdayHours == ""{
+                                    
+                                }else {
+                                    Text("Öffnungszeiten")
+                                        .foregroundColor(.white)
+                                    Text(re.weekdayHours ?? "")
+                                        .foregroundColor(.white)
+                                    Text(re.weekendHours ?? "")
+                                        .foregroundColor(.white)
+                                }
+                                
+                                Text("Nachtabfahrten")
+                                    .foregroundColor(.white)
+                                Text(re.nightSkiing ?? "" == "yes" ? "Ja" : "Nein")
+                                    .foregroundColor(.white)
+                    
+                                AsyncImage(url: URL(string: "https://www.snow-country.com/trail_maps/large_trail_maps/\(re.id ?? "").jpg")){
+                                    image in
+                                    image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 350, height: 400)
+                                }placeholder: {
+                                    ProgressView()
+                                }
+                            }
+                        }
                         
-                        Text(re.resortName ?? "")
-                            .bold()
-                            .foregroundColor(.white)
                     }
-                    .frame(width: 400, height: 50)
-                    .padding()
+                    .frame(width: 500, height: 800)
                     .background(Color.black.opacity(0.4))
-                    .offset(y: -250)
-                    
-                    VStack{
-                        HStack{
-                            Text(re.resortStatus ?? "" == "1" ? "Geöffnet" : "Geschlossen")
-                            houseiconView(status: re.resortStatus ?? "")
-                        }
-                        .foregroundColor(.white)
-                    }
-                    .offset(x:-100 ,y: -200)
-                    
-                    VStack{
-                        if re.weekdayHours == ""{
-                            
-                        }else {
-                            Text("Öffnungszeiten")
-                                .foregroundColor(.white)
-                            Text(re.weekdayHours ?? "")
-                                .foregroundColor(.white)
-                            Text(re.weekendHours ?? "")
-                                .foregroundColor(.white)
-                        }
-                        
-                        Text("Nachtabfahrten")
-                            .foregroundColor(.white)
-                        Text(re.nightSkiing ?? "" == "yes" ? "Ja" : "Nein")
-                            .foregroundColor(.white)
-                        
-                        AsyncImage(url: re.logo){
-                            image in
-                            image
-                                .resizable()
-                                .frame(minWidth: 100, minHeight: 300)
-                            
-                        }placeholder: {
-                            Image(systemName: "house")
+                    .onAppear {
+                        Task {
+                            await snowviewmodel.fetchDataById(id: id)
+                            print(snowviewmodel.ressortbyid)
                         }
                     }
                 }
             }
-            .onAppear {
-                Task {
-                    await snowviewmodel.fetchDataById(id: id)
-                    print(snowviewmodel.ressortbyid)
-                }
-            }
+        .navigationTitle(name)
+
         }
     }
-}
 
 
 #Preview {
-    RessortByIdView(id: "612002")
+    RessortByIdView(id: "509001", name: "test")
         .environmentObject(SnowApiViewModel())
 }

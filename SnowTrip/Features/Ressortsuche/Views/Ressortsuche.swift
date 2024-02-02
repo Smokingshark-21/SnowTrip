@@ -40,7 +40,7 @@ struct Ressortsuche: View {
                     .cornerRadius(25)
                     ScrollView{
                         ForEach(snowviewmodel.items, id: \.resortName){re in
-                            NavigationLink( destination: RessortByIdView(id: re.id)
+                            NavigationLink( destination: RessortByIdView(id: re.id,name: re.resortName)
                                 .environmentObject(snowviewmodel)){
                                 VStack{
                                     Text(re.resortName)
@@ -50,16 +50,14 @@ struct Ressortsuche: View {
                                         .foregroundColor(.gray)
 
                                     Divider()
+                                        .colorInvert()
                                 }
                                 .foregroundColor(.black)
                                 .bold()
                                 .padding()
                             }
+                        
                         }
-                    }
-                    .onAppear(){
-                              UITabBar.appearance().backgroundColor = .black
-
                     }
                     .frame(height: 630)
                     .scrollIndicators(.hidden)
