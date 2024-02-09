@@ -78,12 +78,31 @@ class UserViewModel: ObservableObject {
     // FireStore
     
     private func createUser(with id: String,email: String,name: String) {
-        let user = FireUser(id: id,name: name, email: email, registeredAt: Date())
+        let user = FireUser(id: id,name: name, email: email, registeredAt: Date(),savedressort: [])
         
         do {
             try FirebaseManager.shared.database.collection("users").document(id).setData(from: user)
         } catch let error {
             print("Fehler beim Speichern des users: \(error)")
+        }
+    }
+    
+    func saveRessort(with id: String, ressortadd: [Ressort]) {
+        guard var user = user else {
+            print("Fehler: Der Benutzer ist nil.")
+            return
+        }
+
+        if user.savedressort.isEmpty {
+            user.savedressort = ressortadd
+        } else {
+            user.savedressort.append(contentsOf: ressortadd)
+        }
+
+        do {
+            try FirebaseManager.shared.database.collection("users").document(id).setData(from: user)
+        } catch let error {
+            print("Fehler beim Speichern des Users: \(error)")
         }
     }
     

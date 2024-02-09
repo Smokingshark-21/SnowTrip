@@ -18,6 +18,9 @@ struct SnowTripApp: App {
     
     @StateObject private var userViewModel = UserViewModel()
     @StateObject private var homeViewModel = HomeViewModel()
+    @StateObject private var resortviewmodel = RessortViewModel()
+    @StateObject private var snowviewmodel = SnowApiViewModel()
+
 
     var body: some Scene {
         WindowGroup {
@@ -25,6 +28,8 @@ struct SnowTripApp: App {
                 Tab()
                     .environmentObject(userViewModel)
                     .environmentObject(homeViewModel)
+                    .environmentObject(resortviewmodel)
+                    .environmentObject(snowviewmodel)
             } else{
                 LoginView()
                     .environmentObject(userViewModel)

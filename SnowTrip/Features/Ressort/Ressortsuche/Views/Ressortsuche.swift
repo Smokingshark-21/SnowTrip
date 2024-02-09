@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct Ressortsuche: View {
-    @StateObject private var snowviewmodel = SnowApiViewModel()
+    @EnvironmentObject private var userviewmodel : UserViewModel
+    @EnvironmentObject private var snowviewmodel : SnowApiViewModel
+    @EnvironmentObject private var ressortviewmodel : RessortViewModel
     @State var region = "usa"
     private var regi = ["northwest","southwest","rockies","midwest","northeast","southeast","usa","canada","europe"]
     var body: some View {
@@ -41,7 +43,8 @@ struct Ressortsuche: View {
                     ScrollView{
                         ForEach(snowviewmodel.items, id: \.resortName){re in
                             NavigationLink( destination: RessortByIdView(id: re.id,name: re.resortName)
-                                .environmentObject(snowviewmodel)){
+                                .environmentObject(snowviewmodel)
+                                .environmentObject(ressortviewmodel)){
                                 VStack{
                                     Text(re.resortName)
                                         .foregroundColor(.white.opacity(0.9))
@@ -62,6 +65,7 @@ struct Ressortsuche: View {
                     .frame(height: 630)
                     .scrollIndicators(.hidden)
                     .background(Color.black.opacity(0.4))
+                    .offset(y: 40)
                 }
                 
             }
@@ -70,4 +74,7 @@ struct Ressortsuche: View {
 }
 #Preview {
     Ressortsuche()
+        .environmentObject(UserViewModel())
+        .environmentObject(RessortViewModel())
+        .environmentObject(SnowApiViewModel())
 }

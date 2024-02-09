@@ -10,29 +10,41 @@ import SwiftUI
 struct Tab: View {
     @EnvironmentObject private var userViewModel: UserViewModel
     @EnvironmentObject private var homeViewmodel: HomeViewModel
+    @EnvironmentObject private var resortviewmodel :RessortViewModel
+    @EnvironmentObject private var snowviewmodel : SnowApiViewModel
     var body: some View {
         TabView{
             Home()
                 .environmentObject(userViewModel)
                 .environmentObject(homeViewmodel)
                 .tabItem { Label("Home", systemImage: "house") }
-          
+            
             Ressortsuche()
                 .environmentObject(userViewModel)
-                .tabItem { Label("Suche", systemImage: "magnifyingglass") }
-               
-            GespeicherteRessort()
                 .environmentObject(userViewModel)
-                .tabItem { Label("Ressorts", systemImage: "tray.full") }
+                .tabItem { Label("Suche", systemImage: "magnifyingglass") }
+            if resortviewmodel.resortlist.isEmpty{
+                
+            }
+            else{
+                GespeicherteRessort()
+                    .environmentObject(resortviewmodel)
+                    .environmentObject(snowviewmodel)
+                    .tabItem { Label("Ressorts", systemImage: "tray.full") }
+            }
+            
+            MyBuddys()
+                .tabItem { Label("My Buddys", systemImage: "figure.snowboarding") }
+            
             Einstellungen()
                 .environmentObject(userViewModel)
                 .tabItem { Label("Einstellungen", systemImage: "gear") }
-           
+            
         }
         .onAppear() {
             UITabBar.appearance().backgroundColor = .black
             UITabBar.appearance().unselectedItemTintColor = .gray
-                
+            
         }
     }
 }
@@ -41,4 +53,6 @@ struct Tab: View {
     Tab()
         .environmentObject(UserViewModel())
         .environmentObject(HomeViewModel())
+        .environmentObject(RessortViewModel())
+        .environmentObject(SnowApiViewModel())
 }

@@ -53,6 +53,11 @@
 		9B51EC0A2B60DE9B003D087C /* GespeicherteRessort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EC092B60DE9B003D087C /* GespeicherteRessort.swift */; };
 		9B51EC0E2B60E0B3003D087C /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EC0D2B60E0B3003D087C /* Header.swift */; };
 		9B8B63F32B6BABCD00968734 /* offnungszeiten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */; };
+		9B8B63FC2B70FEDA00968734 /* RessortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B63FB2B70FEDA00968734 /* RessortViewModel.swift */; };
+		9BF2ED6B2B735E7000E50625 /* MyBuddys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2ED6A2B735E7000E50625 /* MyBuddys.swift */; };
+		9BF2ED702B736A9500E50625 /* Minichat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2ED6F2B736A9500E50625 /* Minichat.swift */; };
+		9BF2ED752B736CE500E50625 /* MyBuddysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2ED742B736CE500E50625 /* MyBuddysViewModel.swift */; };
+		9BF2ED772B73C33C00E50625 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2ED762B73C33C00E50625 /* StatusView.swift */; };
 		9BF50C5F2B63F3BE00AB3FF4 /* regioresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C5E2B63F3BE00AB3FF4 /* regioresponse.swift */; };
 		9BF50C632B63F59600AB3FF4 /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C622B63F59600AB3FF4 /* SearchRepo.swift */; };
 		9BF50C662B63F64B00AB3FF4 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF50C652B63F64B00AB3FF4 /* HTTPError.swift */; };
@@ -82,6 +87,12 @@
 		9B51EC092B60DE9B003D087C /* GespeicherteRessort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GespeicherteRessort.swift; sourceTree = "<group>"; };
 		9B51EC0D2B60E0B3003D087C /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offnungszeiten.swift; sourceTree = "<group>"; };
+		9B8B63FB2B70FEDA00968734 /* RessortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RessortViewModel.swift; sourceTree = "<group>"; };
+		9BF2ED6A2B735E7000E50625 /* MyBuddys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuddys.swift; sourceTree = "<group>"; };
+		9BF2ED6C2B73614500E50625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9BF2ED6F2B736A9500E50625 /* Minichat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minichat.swift; sourceTree = "<group>"; };
+		9BF2ED742B736CE500E50625 /* MyBuddysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuddysViewModel.swift; sourceTree = "<group>"; };
+		9BF2ED762B73C33C00E50625 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		9BF50C5E2B63F3BE00AB3FF4 /* regioresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regioresponse.swift; sourceTree = "<group>"; };
 		9BF50C622B63F59600AB3FF4 /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
 		9BF50C652B63F64B00AB3FF4 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
@@ -147,6 +158,7 @@
 		9B51EB942B5FBB51003D087C /* SnowTrip */ = {
 			isa = PBXGroup;
 			children = (
+				9BF2ED6C2B73614500E50625 /* Info.plist */,
 				9B51EC0F2B60E2C1003D087C /* Util */,
 				9B51EBE52B603B71003D087C /* GoogleService-Info.plist */,
 				9B51EBA82B5FCA29003D087C /* Common */,
@@ -169,11 +181,11 @@
 		9B51EBA32B5FBB5E003D087C /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				9BF2ED662B735E3900E50625 /* My Buddys */,
+				9B8B63F92B70FEA300968734 /* Ressort */,
 				9B51EBA42B5FBB8F003D087C /* Login */,
 				9B51EBFE2B60DA13003D087C /* Tab */,
 				9B51EBF22B60D756003D087C /* Home */,
-				9B51EC032B60DB8A003D087C /* Ressortsuche */,
-				9B51EC072B60DE6E003D087C /* GespeicherteRessort */,
 				9B51EBF92B60D7ED003D087C /* Einstellungen */,
 			);
 			path = Features;
@@ -183,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				9B51EBA72B5FBBA8003D087C /* Viewmodel */,
-				9B51EBA62B5FBBA3003D087C /* Model */,
 				9B51EBA52B5FBB9E003D087C /* Views */,
 			);
 			path = Login;
@@ -210,7 +221,6 @@
 		9B51EBA72B5FBBA8003D087C /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
-				9B51EBED2B60D1EA003D087C /* UserViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -218,9 +228,9 @@
 		9B51EBA82B5FCA29003D087C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9B8B63F82B70F0FC00968734 /* User */,
 				9B8B63EF2B6BABA400968734 /* Components */,
 				9BF50C5C2B63F37800AB3FF4 /* ApiSnow */,
-				9B51EBF62B60D77D003D087C /* ViewModel */,
 				9B51EBEF2B60D243003D087C /* Manager */,
 				9B51EBA92B5FCA38003D087C /* Views */,
 			);
@@ -280,6 +290,7 @@
 		9B51EBF62B60D77D003D087C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9B51EBED2B60D1EA003D087C /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -403,6 +414,76 @@
 				9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9B8B63F82B70F0FC00968734 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9B51EBF62B60D77D003D087C /* ViewModel */,
+				9B51EBA62B5FBBA3003D087C /* Model */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		9B8B63F92B70FEA300968734 /* Ressort */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B63FA2B70FEC100968734 /* ViewModel */,
+				9B51EC072B60DE6E003D087C /* GespeicherteRessort */,
+				9B51EC032B60DB8A003D087C /* Ressortsuche */,
+			);
+			path = Ressort;
+			sourceTree = "<group>";
+		};
+		9B8B63FA2B70FEC100968734 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B63FB2B70FEDA00968734 /* RessortViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9BF2ED662B735E3900E50625 /* My Buddys */ = {
+			isa = PBXGroup;
+			children = (
+				9BF2ED712B736CC400E50625 /* Viewmodel */,
+				9BF2ED6D2B736A8300E50625 /* Components */,
+				9BF2ED672B735E4D00E50625 /* Views */,
+			);
+			path = "My Buddys";
+			sourceTree = "<group>";
+		};
+		9BF2ED672B735E4D00E50625 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BF2ED6A2B735E7000E50625 /* MyBuddys.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9BF2ED6D2B736A8300E50625 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9BF2ED6E2B736A8A00E50625 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9BF2ED6E2B736A8A00E50625 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BF2ED6F2B736A9500E50625 /* Minichat.swift */,
+				9BF2ED762B73C33C00E50625 /* StatusView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9BF2ED712B736CC400E50625 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				9BF2ED742B736CE500E50625 /* MyBuddysViewModel.swift */,
+			);
+			path = Viewmodel;
 			sourceTree = "<group>";
 		};
 		9BF50C5C2B63F37800AB3FF4 /* ApiSnow */ = {
@@ -576,15 +657,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8B63FC2B70FEDA00968734 /* RessortViewModel.swift in Sources */,
 				9B51EBE82B603BFB003D087C /* AnmeldenView.swift in Sources */,
+				9BF2ED772B73C33C00E50625 /* StatusView.swift in Sources */,
 				9BF50C692B63F79D00AB3FF4 /* SnowApiViewModel.swift in Sources */,
 				9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */,
 				9B51EBEC2B60D1B8003D087C /* User.swift in Sources */,
 				9B51EC0A2B60DE9B003D087C /* GespeicherteRessort.swift in Sources */,
+				9BF2ED702B736A9500E50625 /* Minichat.swift in Sources */,
 				9BF50C5F2B63F3BE00AB3FF4 /* regioresponse.swift in Sources */,
 				9B51EC062B60DBA5003D087C /* Ressortsuche.swift in Sources */,
 				9B51EBEA2B603C10003D087C /* RegistrierenView.swift in Sources */,
 				9B51EBF82B60D795003D087C /* Home.swift in Sources */,
+				9BF2ED6B2B735E7000E50625 /* MyBuddys.swift in Sources */,
 				9B51EC022B60DA41003D087C /* Tab.swift in Sources */,
 				9B8B63F32B6BABCD00968734 /* offnungszeiten.swift in Sources */,
 				9B51EBF12B60D252003D087C /* FirebaseManager.swift in Sources */,
@@ -598,6 +683,7 @@
 				9B27AD732B625A7C00EB9F3E /* HomeViewModel.swift in Sources */,
 				9BF50C952B67D49900AB3FF4 /* RessortByIdView.swift in Sources */,
 				9B51EBFD2B60D816003D087C /* Einstellungen.swift in Sources */,
+				9BF2ED752B736CE500E50625 /* MyBuddysViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,9 +818,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SnowTrip/Preview Content\"";
+				DEVELOPMENT_TEAM = 3S49WT9HYS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SnowTrip/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standort freigabe benötigt";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -763,9 +852,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SnowTrip/Preview Content\"";
+				DEVELOPMENT_TEAM = 3S49WT9HYS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SnowTrip/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standort freigabe benötigt";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
