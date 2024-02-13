@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StatusView: View {
+    @EnvironmentObject private var mybuddyViewModel : MyBuddysViewModel
     var body: some View {
         VStack{
             Text("Status")
@@ -15,7 +16,7 @@ struct StatusView: View {
                 .bold()
             HStack(alignment: .center, spacing: 50){
                 Button {
-                    
+                    mybuddyViewModel.status = 0
                 } label: {
                     Text("Okay")
                         .foregroundColor(.white)
@@ -27,7 +28,7 @@ struct StatusView: View {
                 }
                 
                 Button {
-                    
+                    mybuddyViewModel.status = 1
                 } label: {
                     Text("Pause")
                         .foregroundColor(.white)
@@ -38,7 +39,7 @@ struct StatusView: View {
                 }
                 
                 Button {
-                    
+                    mybuddyViewModel.status = 3
                 } label: {
                     Text("Notfall")
                         .foregroundColor(.white)
@@ -55,4 +56,5 @@ struct StatusView: View {
 
 #Preview {
     StatusView()
+        .environmentObject(MyBuddysViewModel())
 }

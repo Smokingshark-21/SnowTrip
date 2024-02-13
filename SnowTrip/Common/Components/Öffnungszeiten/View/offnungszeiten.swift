@@ -20,20 +20,20 @@ struct offnungszeiten: View {
                         .padding()
                         .bold()
                         .frame(width: 150, height: 100)
-                        .background(Color.cyan)
+                        .background(Color.blue)
                         .cornerRadius(25)
                     Text(re.weekendHours ?? "")
                         .padding()
                         .bold()
                         .frame(width: 150, height: 100)
-                        .background(Color.cyan)
+                        .background(Color.blue)
                         .cornerRadius(25)
                 }
             }
         }
         .padding()
         .frame(width: 370, height: 200)
-        .background(Color.gray)
+        .background(Color.gray.opacity(0.5))
         .cornerRadius(25)
         .onAppear {
             Task {

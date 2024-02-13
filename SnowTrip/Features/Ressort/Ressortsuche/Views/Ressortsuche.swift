@@ -44,7 +44,8 @@ struct Ressortsuche: View {
                         ForEach(snowviewmodel.items, id: \.resortName){re in
                             NavigationLink( destination: RessortByIdView(id: re.id,name: re.resortName)
                                 .environmentObject(snowviewmodel)
-                                .environmentObject(ressortviewmodel)){
+                                .environmentObject(ressortviewmodel)
+                                .environmentObject(userviewmodel)){
                                 VStack{
                                     Text(re.resortName)
                                         .foregroundColor(.white.opacity(0.9))

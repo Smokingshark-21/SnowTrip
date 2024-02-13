@@ -78,7 +78,7 @@ class UserViewModel: ObservableObject {
     // FireStore
     
     private func createUser(with id: String,email: String,name: String) {
-        let user = FireUser(id: id,name: name, email: email, registeredAt: Date(),savedressort: [])
+        let user = FireUser(id: id,name: name, email: email, registeredAt: Date(),savedressort: [],widgets: [])
         
         do {
             try FirebaseManager.shared.database.collection("users").document(id).setData(from: user)
@@ -87,20 +87,32 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func saveRessort(with id: String, ressortadd: [Ressort]) {
+    func saveRessort(with ressortadd: [Ressort]) {
         guard var user = user else {
             print("Fehler: Der Benutzer ist nil.")
             return
         }
-
-        if user.savedressort.isEmpty {
+               
             user.savedressort = ressortadd
-        } else {
-            user.savedressort.append(contentsOf: ressortadd)
-        }
-
+            
+    
         do {
-            try FirebaseManager.shared.database.collection("users").document(id).setData(from: user)
+            try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user)
+        } catch let error {
+            print("Fehler beim Speichern des Users: \(error)")
+        }
+    }
+    
+    func saveWidget(with  widget : [Widget] ) {
+        guard var user = user else {
+            print("Fehler: Der Benutzer ist nil.")
+            return
+        }
+       
+            user.widgets = widget
+    
+        do {
+            try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user)
         } catch let error {
             print("Fehler beim Speichern des Users: \(error)")
         }

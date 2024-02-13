@@ -12,11 +12,14 @@ struct Tab: View {
     @EnvironmentObject private var homeViewmodel: HomeViewModel
     @EnvironmentObject private var resortviewmodel :RessortViewModel
     @EnvironmentObject private var snowviewmodel : SnowApiViewModel
+   
     var body: some View {
         TabView{
             Home()
                 .environmentObject(userViewModel)
                 .environmentObject(homeViewmodel)
+                .environmentObject(snowviewmodel)
+                .environmentObject(resortviewmodel)
                 .tabItem { Label("Home", systemImage: "house") }
             
             Ressortsuche()
@@ -30,6 +33,8 @@ struct Tab: View {
                 GespeicherteRessort()
                     .environmentObject(resortviewmodel)
                     .environmentObject(snowviewmodel)
+                    .environmentObject(homeViewmodel)
+                    .environmentObject(userViewModel)
                     .tabItem { Label("Ressorts", systemImage: "tray.full") }
             }
             

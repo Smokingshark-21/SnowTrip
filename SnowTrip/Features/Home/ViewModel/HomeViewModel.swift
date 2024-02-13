@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
-    
+    @Published var widgetlist: [Widget] = []
     
     func monatssprüche() -> String {
         let date = Date()
@@ -47,6 +47,21 @@ class HomeViewModel: ObservableObject {
         }
         
         
+    }
+    func addwidget(wid : Widget) {
+        if widgetlist.isEmpty {
+               widgetlist = [wid]
+           } else if let index = widgetlist.firstIndex(where: { $0.id == wid.id }) {
+               widgetlist[index] = wid
+           } else {
+               widgetlist.append(wid)
+           }
+    }
+    
+    func removewidget(wid: String) {
+        if let index = widgetlist.firstIndex(where: { $0.id == wid }) {
+            widgetlist.remove(at: index)
+        }
     }
     
     func tageszeit(name:String) -> String {

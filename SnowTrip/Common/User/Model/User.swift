@@ -13,4 +13,5 @@ struct FireUser :Codable {
     var email: String
     var registeredAt: Date
     var savedressort : [Ressort]
+    var widgets : [Widget]
 }

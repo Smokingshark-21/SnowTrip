@@ -10,6 +10,7 @@ import SwiftUI
 struct RessortByIdView: View {
     @EnvironmentObject private var snowviewmodel : SnowApiViewModel
     @EnvironmentObject private var ressortviewmodel : RessortViewModel
+    @EnvironmentObject private var userviewmodel : UserViewModel
     @State var zoom = false
     let id : String
     let name : String
@@ -87,6 +88,7 @@ struct RessortByIdView: View {
         .toolbar {
             Button {
                 ressortviewmodel.addresort(ressort: snowviewmodel.ressortbyid.first!)
+                userviewmodel.saveRessort(with: ressortviewmodel.resortlist)
             } label: {
                 if ressortviewmodel.resortlist.contains(where: { $0.id == snowviewmodel.ressortbyid.first!.id }){
                     Image(systemName: "checkmark.square")
@@ -104,4 +106,5 @@ struct RessortByIdView: View {
     RessortByIdView(id: "509001", name: "test")
         .environmentObject(SnowApiViewModel())
         .environmentObject(RessortViewModel())
+        .environmentObject(UserViewModel())
 }

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9B27AD732B625A7C00EB9F3E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27AD722B625A7C00EB9F3E /* HomeViewModel.swift */; };
+		9B2B640A2B7662BB0096A974 /* NofallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64092B7662BB0096A974 /* NofallView.swift */; };
+		9B2B640D2B7666AD0096A974 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2B640C2B7666AD0096A974 /* SDWebImageSwiftUI */; };
+		9B2B64112B7670E50096A974 /* anima.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B64102B7670E50096A974 /* anima.gif */; };
+		9B2B64162B79FA0D0096A974 /* SaveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64152B79FA0D0096A974 /* SaveDetailView.swift */; };
+		9B2B64182B7A009F0096A974 /* KarteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64172B7A009F0096A974 /* KarteView.swift */; };
+		9B2B641A2B7A03C40096A974 /* SchneeMinMaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64192B7A03C40096A974 /* SchneeMinMaxView.swift */; };
+		9B2B641D2B7A262B0096A974 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B641C2B7A262B0096A974 /* Widget.swift */; };
+		9B2B641F2B7B89E80096A974 /* Gpsdaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B641E2B7B89E80096A974 /* Gpsdaten.swift */; };
 		9B51EB962B5FBB51003D087C /* SnowTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EB952B5FBB51003D087C /* SnowTrip.swift */; };
 		9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EB972B5FBB51003D087C /* LoginView.swift */; };
 		9B51EB9A2B5FBB53003D087C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B51EB992B5FBB53003D087C /* Assets.xcassets */; };
@@ -68,6 +76,13 @@
 
 /* Begin PBXFileReference section */
 		9B27AD722B625A7C00EB9F3E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9B2B64092B7662BB0096A974 /* NofallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofallView.swift; sourceTree = "<group>"; };
+		9B2B64102B7670E50096A974 /* anima.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = anima.gif; sourceTree = "<group>"; };
+		9B2B64152B79FA0D0096A974 /* SaveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDetailView.swift; sourceTree = "<group>"; };
+		9B2B64172B7A009F0096A974 /* KarteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteView.swift; sourceTree = "<group>"; };
+		9B2B64192B7A03C40096A974 /* SchneeMinMaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchneeMinMaxView.swift; sourceTree = "<group>"; };
+		9B2B641C2B7A262B0096A974 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
+		9B2B641E2B7B89E80096A974 /* Gpsdaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gpsdaten.swift; sourceTree = "<group>"; };
 		9B51EB922B5FBB51003D087C /* SnowTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B51EB952B5FBB51003D087C /* SnowTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowTrip.swift; sourceTree = "<group>"; };
 		9B51EB972B5FBB51003D087C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -106,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2B640D2B7666AD0096A974 /* SDWebImageSwiftUI in Frameworks */,
 				9B51EBC22B5FCC90003D087C /* FirebaseDatabase in Frameworks */,
 				9B51EBD02B5FCC90003D087C /* FirebaseFunctionsCombine-Community in Frameworks */,
 				9B51EBC82B5FCC90003D087C /* FirebaseFirestore in Frameworks */,
@@ -139,6 +155,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B2B64122B79F9DF0096A974 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B64132B79F9ED0096A974 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9B2B64132B79F9ED0096A974 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B64152B79FA0D0096A974 /* SaveDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B2B641B2B7A261A0096A974 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B641C2B7A262B0096A974 /* Widget.swift */,
+				9B2B641E2B7B89E80096A974 /* Gpsdaten.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9B51EB892B5FBB51003D087C = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +205,7 @@
 				9B51EBA82B5FCA29003D087C /* Common */,
 				9B51EBA32B5FBB5E003D087C /* Features */,
 				9B51EB952B5FBB51003D087C /* SnowTrip.swift */,
+				9B2B64102B7670E50096A974 /* anima.gif */,
 				9B51EB992B5FBB53003D087C /* Assets.xcassets */,
 				9B51EB9B2B5FBB53003D087C /* Preview Content */,
 			);
@@ -228,6 +270,7 @@
 		9B51EBA82B5FCA29003D087C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9B2B641B2B7A261A0096A974 /* Model */,
 				9B8B63F82B70F0FC00968734 /* User */,
 				9B8B63EF2B6BABA400968734 /* Components */,
 				9BF50C5C2B63F37800AB3FF4 /* ApiSnow */,
@@ -258,7 +301,6 @@
 			children = (
 				9B51EC0B2B60E099003D087C /* Components */,
 				9B51EBF32B60D761003D087C /* ViewModel */,
-				9B51EBF42B60D767003D087C /* Model */,
 				9B51EBF52B60D76D003D087C /* Views */,
 			);
 			path = Home;
@@ -270,13 +312,6 @@
 				9B27AD722B625A7C00EB9F3E /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9B51EBF42B60D767003D087C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9B51EBF52B60D76D003D087C /* Views */ = {
@@ -394,17 +429,17 @@
 		9B8B63EF2B6BABA400968734 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9B8B63F02B6BABAF00968734 /* Öffnungszeiten */,
+				9B8B63F02B6BABAF00968734 /* Widgetsintern */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9B8B63F02B6BABAF00968734 /* Öffnungszeiten */ = {
+		9B8B63F02B6BABAF00968734 /* Widgetsintern */ = {
 			isa = PBXGroup;
 			children = (
 				9B8B63F12B6BABB900968734 /* View */,
 			);
-			name = "Öffnungszeiten";
+			name = Widgetsintern;
 			path = "Öffnungszeiten";
 			sourceTree = "<group>";
 		};
@@ -412,6 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				9B8B63F22B6BABCD00968734 /* offnungszeiten.swift */,
+				9B2B64172B7A009F0096A974 /* KarteView.swift */,
+				9B2B64192B7A03C40096A974 /* SchneeMinMaxView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +465,7 @@
 		9B8B63F92B70FEA300968734 /* Ressort */ = {
 			isa = PBXGroup;
 			children = (
+				9B2B64122B79F9DF0096A974 /* Components */,
 				9B8B63FA2B70FEC100968734 /* ViewModel */,
 				9B51EC072B60DE6E003D087C /* GespeicherteRessort */,
 				9B51EC032B60DB8A003D087C /* Ressortsuche */,
@@ -474,6 +512,7 @@
 			children = (
 				9BF2ED6F2B736A9500E50625 /* Minichat.swift */,
 				9BF2ED762B73C33C00E50625 /* StatusView.swift */,
+				9B2B64092B7662BB0096A974 /* NofallView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -598,6 +637,7 @@
 				9B51EBDF2B5FCC90003D087C /* FirebaseRemoteConfigSwift */,
 				9B51EBE12B5FCC90003D087C /* FirebaseStorage */,
 				9B51EBE32B5FCC90003D087C /* FirebaseStorageCombine-Community */,
+				9B2B640C2B7666AD0096A974 /* SDWebImageSwiftUI */,
 			);
 			productName = SnowTrip;
 			productReference = 9B51EB922B5FBB51003D087C /* SnowTrip.app */;
@@ -629,6 +669,7 @@
 			mainGroup = 9B51EB892B5FBB51003D087C;
 			packageReferences = (
 				9B51EBAE2B5FCC90003D087C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9B2B640B2B7666AD0096A974 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 9B51EB932B5FBB51003D087C /* Products */;
 			projectDirPath = "";
@@ -647,6 +688,7 @@
 				9B51EB9D2B5FBB53003D087C /* Preview Assets.xcassets in Resources */,
 				9B51EBE62B603B71003D087C /* GoogleService-Info.plist in Resources */,
 				9B51EB9A2B5FBB53003D087C /* Assets.xcassets in Resources */,
+				9B2B64112B7670E50096A974 /* anima.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,13 +706,17 @@
 				9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */,
 				9B51EBEC2B60D1B8003D087C /* User.swift in Sources */,
 				9B51EC0A2B60DE9B003D087C /* GespeicherteRessort.swift in Sources */,
+				9B2B641F2B7B89E80096A974 /* Gpsdaten.swift in Sources */,
 				9BF2ED702B736A9500E50625 /* Minichat.swift in Sources */,
 				9BF50C5F2B63F3BE00AB3FF4 /* regioresponse.swift in Sources */,
 				9B51EC062B60DBA5003D087C /* Ressortsuche.swift in Sources */,
 				9B51EBEA2B603C10003D087C /* RegistrierenView.swift in Sources */,
+				9B2B641D2B7A262B0096A974 /* Widget.swift in Sources */,
 				9B51EBF82B60D795003D087C /* Home.swift in Sources */,
 				9BF2ED6B2B735E7000E50625 /* MyBuddys.swift in Sources */,
 				9B51EC022B60DA41003D087C /* Tab.swift in Sources */,
+				9B2B64162B79FA0D0096A974 /* SaveDetailView.swift in Sources */,
+				9B2B641A2B7A03C40096A974 /* SchneeMinMaxView.swift in Sources */,
 				9B8B63F32B6BABCD00968734 /* offnungszeiten.swift in Sources */,
 				9B51EBF12B60D252003D087C /* FirebaseManager.swift in Sources */,
 				9BF50C932B67CFB100AB3FF4 /* Idresponse.swift in Sources */,
@@ -679,6 +725,8 @@
 				9BF50C632B63F59600AB3FF4 /* SearchRepo.swift in Sources */,
 				9B51EC0E2B60E0B3003D087C /* Header.swift in Sources */,
 				9B51EBEE2B60D1EA003D087C /* UserViewModel.swift in Sources */,
+				9B2B640A2B7662BB0096A974 /* NofallView.swift in Sources */,
+				9B2B64182B7A009F0096A974 /* KarteView.swift in Sources */,
 				9B51EBAD2B5FCA93003D087C /* SnowAnima.swift in Sources */,
 				9B27AD732B625A7C00EB9F3E /* HomeViewModel.swift in Sources */,
 				9BF50C952B67D49900AB3FF4 /* RessortByIdView.swift in Sources */,
@@ -901,6 +949,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9B2B640B2B7666AD0096A974 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.6;
+			};
+		};
 		9B51EBAE2B5FCC90003D087C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -912,6 +968,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9B2B640C2B7666AD0096A974 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B2B640B2B7666AD0096A974 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		9B51EBAF2B5FCC90003D087C /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B51EBAE2B5FCC90003D087C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

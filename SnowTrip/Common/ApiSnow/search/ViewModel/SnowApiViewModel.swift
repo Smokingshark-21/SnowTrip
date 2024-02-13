@@ -37,4 +37,12 @@ class SnowApiViewModel: ObservableObject {
             }
         }
     }
+    
+    func stringInDouble(sdata: String) -> String {
+        if let doubleValue = Double(sdata) {
+            return String(format: "%.0f", doubleValue * 2.54.rounded())
+        } else {
+            return "Ungültiger Wert"
+        }
+    }
 }
