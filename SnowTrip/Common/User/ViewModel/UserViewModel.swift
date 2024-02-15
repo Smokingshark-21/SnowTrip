@@ -97,7 +97,7 @@ class UserViewModel: ObservableObject {
             
     
         do {
-            try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user)
+            try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user,merge : true)
         } catch let error {
             print("Fehler beim Speichern des Users: \(error)")
         }
@@ -112,11 +112,12 @@ class UserViewModel: ObservableObject {
             user.widgets = widget
     
         do {
-            try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user)
+            try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user,merge : true )
         } catch let error {
             print("Fehler beim Speichern des Users: \(error)")
         }
     }
+
     
     
     private func fetchUser(with id: String) {

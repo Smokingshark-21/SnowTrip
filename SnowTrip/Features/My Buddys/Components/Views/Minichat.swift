@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct Minichat: View {
+    @State var textsenden = ""
     var body: some View {
         VStack{
-            Text("Chat")
-            
+            chatfield(text: "Moin was geht", side: true)
+            chatfield(text: "Bist du dumm", side: false)
+            HStack{
+                TextField("Chat", text: $textsenden)
+                Button(action: {}, label: {
+                    Image(systemName: "paperplane.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .rotationEffect(.degrees(40.0))
+                })
+            }
+            .padding()
         }
-        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+        .frame(width: 400,height: 300)
         .background(Color.black.opacity(0.4))
     }
 }

@@ -40,6 +40,7 @@ struct GespeicherteRessort: View {
                         .swipeActions{
                             Button(role: .none) {
                                 homeviewmodel.addwidget(wid: Widget(name: re.resortName ?? "", status: true, offnung: true, karte: true, schnetiefe: true, id: re.id ?? ""))
+                                
                                 userviewmodel.saveWidget(with: homeviewmodel.widgetlist)
                             } label: {
                                 Label("addAll",systemImage: "plus.circle")

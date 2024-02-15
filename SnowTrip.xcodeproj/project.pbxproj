@@ -16,6 +16,7 @@
 		9B2B641A2B7A03C40096A974 /* SchneeMinMaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64192B7A03C40096A974 /* SchneeMinMaxView.swift */; };
 		9B2B641D2B7A262B0096A974 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B641C2B7A262B0096A974 /* Widget.swift */; };
 		9B2B641F2B7B89E80096A974 /* Gpsdaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B641E2B7B89E80096A974 /* Gpsdaten.swift */; };
+		9B2B64212B7C8A2C0096A974 /* chatfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64202B7C8A2C0096A974 /* chatfield.swift */; };
 		9B51EB962B5FBB51003D087C /* SnowTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EB952B5FBB51003D087C /* SnowTrip.swift */; };
 		9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51EB972B5FBB51003D087C /* LoginView.swift */; };
 		9B51EB9A2B5FBB53003D087C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B51EB992B5FBB53003D087C /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		9B2B64192B7A03C40096A974 /* SchneeMinMaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchneeMinMaxView.swift; sourceTree = "<group>"; };
 		9B2B641C2B7A262B0096A974 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		9B2B641E2B7B89E80096A974 /* Gpsdaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gpsdaten.swift; sourceTree = "<group>"; };
+		9B2B64202B7C8A2C0096A974 /* chatfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatfield.swift; sourceTree = "<group>"; };
 		9B51EB922B5FBB51003D087C /* SnowTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B51EB952B5FBB51003D087C /* SnowTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowTrip.swift; sourceTree = "<group>"; };
 		9B51EB972B5FBB51003D087C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				9BF2ED6F2B736A9500E50625 /* Minichat.swift */,
 				9BF2ED762B73C33C00E50625 /* StatusView.swift */,
 				9B2B64092B7662BB0096A974 /* NofallView.swift */,
+				9B2B64202B7C8A2C0096A974 /* chatfield.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 			files = (
 				9B8B63FC2B70FEDA00968734 /* RessortViewModel.swift in Sources */,
 				9B51EBE82B603BFB003D087C /* AnmeldenView.swift in Sources */,
+				9B2B64212B7C8A2C0096A974 /* chatfield.swift in Sources */,
 				9BF2ED772B73C33C00E50625 /* StatusView.swift in Sources */,
 				9BF50C692B63F79D00AB3FF4 /* SnowApiViewModel.swift in Sources */,
 				9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */,
