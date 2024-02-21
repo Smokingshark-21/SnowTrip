@@ -11,6 +11,7 @@ struct SaveDetailView: View {
     @EnvironmentObject private var snowviewmodel : SnowApiViewModel
     @EnvironmentObject private var homeviewmodel : HomeViewModel
     @EnvironmentObject private var userviewmodel : UserViewModel
+    @EnvironmentObject private var ressortviewmodel : RessortViewModel
     var name : String
    @State var status = false
    @State var offnung = false
@@ -43,7 +44,7 @@ struct SaveDetailView: View {
                     .onChange(of: offnung){
                         homeviewmodel.addwidget(wid: Widget(name: name, status: status, offnung: offnung, karte: karte, schnetiefe: tiefe, id: id))
                         
-                        userviewmodel.saveWidget(with: homeviewmodel.widgetlist)
+                        userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeviewmodel.widgetlist)
                     }
                 SchneeMinMaxView(id: id)
                     .environmentObject(snowviewmodel)
@@ -69,7 +70,7 @@ struct SaveDetailView: View {
                     .onChange(of: tiefe){
                         homeviewmodel.addwidget(wid: Widget(name: name, status: status, offnung: offnung, karte: karte, schnetiefe: tiefe, id: id))
                         
-                        userviewmodel.saveWidget(with: homeviewmodel.widgetlist)
+                        userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeviewmodel.widgetlist)
                     }
                 
                 KarteView(id: id)
@@ -97,7 +98,7 @@ struct SaveDetailView: View {
                     .onChange(of: karte){
                         homeviewmodel.addwidget(wid: Widget(name: name, status: status, offnung: offnung, karte: karte, schnetiefe: tiefe, id: id))
                         
-                        userviewmodel.saveWidget(with: homeviewmodel.widgetlist)
+                        userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeviewmodel.widgetlist)
                     }
             }
             
@@ -113,4 +114,5 @@ struct SaveDetailView: View {
         .environmentObject(SnowApiViewModel())
         .environmentObject(HomeViewModel())
         .environmentObject(UserViewModel())
+        .environmentObject(RessortViewModel())
 }

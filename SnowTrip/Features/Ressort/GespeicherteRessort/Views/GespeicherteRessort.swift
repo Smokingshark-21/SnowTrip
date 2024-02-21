@@ -35,24 +35,33 @@ struct GespeicherteRessort: View {
                                 .environmentObject(snowviewmodel)
                                 .environmentObject(userviewmodel)
                                 .environmentObject(homeviewmodel)
+                                .environmentObject(ressortviewmodel)
 
                         }
                         .swipeActions{
                             Button(role: .none) {
-                                homeviewmodel.addwidget(wid: Widget(name: re.resortName ?? "", status: true, offnung: true, karte: true, schnetiefe: true, id: re.id ?? ""))
-                                
-                                userviewmodel.saveWidget(with: homeviewmodel.widgetlist)
+                                if let index = homeviewmodel.widgetlist.firstIndex(where: { $0.id == re.id }) {
+                                        homeviewmodel.widgetlist.remove(at: index)
+                                    }else {
+                                        homeviewmodel.addwidget(wid: Widget(name: re.resortName ?? "", status: true, offnung: true, karte: true, schnetiefe: true, id: re.id ?? ""))
+                                    }
+                                userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeviewmodel.widgetlist)
                             } label: {
-                                Label("addAll",systemImage: "plus.circle")
+                                if let index = homeviewmodel.widgetlist.firstIndex(where: { $0.id == re.id }) {
+                                    Label("removeAll",systemImage: "minus.circle")
+                                }else {
+                                    Label("addAll",systemImage: "plus.circle")
+                                }
                             }
 
                             Button(role: .destructive) {
                                 if let index = ressortviewmodel.resortlist.firstIndex(where: { $0.id == re.id }) {
                                     ressortviewmodel.resortlist.remove(at: index)
-                                    homeviewmodel.removewidget(wid: re.id ?? "")
                                 }
-                                userviewmodel.saveRessort(with: ressortviewmodel.resortlist)
-                                userviewmodel.saveWidget(with: homeviewmodel.widgetlist)
+                                homeviewmodel.removewidget(wid: re.id ?? "")
+
+                                userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeviewmodel.widgetlist)
+                                
                             }label: {
                                 Label("löschen",systemImage: "trash")
                             }

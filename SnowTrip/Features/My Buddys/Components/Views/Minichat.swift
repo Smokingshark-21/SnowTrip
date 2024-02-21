@@ -11,20 +11,33 @@ struct Minichat: View {
     @State var textsenden = ""
     var body: some View {
         VStack{
-            chatfield(text: "Moin was geht", side: true)
-            chatfield(text: "Bist du dumm", side: false)
+            ScrollView{
+                VStack{
+                    chatfield(text: "Moin was geht", side: true, benutzname: "max")
+                    chatfield(text: "test2", side: false, benutzname: "Pier")
+                    chatfield(text: "Moin was geht", side: true, benutzname: "max")
+                    chatfield(text: "test2", side: false, benutzname: "Pier")
+                    chatfield(text: "Moin was geht", side: true, benutzname: "max")
+                    chatfield(text: "test2", side: false, benutzname: "Pier")
+                    chatfield(text: "Moin was geht", side: true, benutzname: "max")
+                    chatfield(text: "test2", side: false, benutzname: "Pier")
+                    chatfield(text: "Moin was geht", side: true, benutzname: "max")
+                    chatfield(text: "test2", side: false, benutzname: "Pier")
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            }
+            .frame(width: 400)
             HStack{
                 TextField("Chat", text: $textsenden)
                 Button(action: {}, label: {
                     Image(systemName: "paperplane.circle.fill")
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .rotationEffect(.degrees(40.0))
+                        .rotationEffect(.degrees(45.0))
                 })
             }
             .padding()
         }
-        .frame(width: 400,height: 300)
         .background(Color.black.opacity(0.4))
     }
 }

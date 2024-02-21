@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0198E12B835DC2000502B5 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0198E02B835DC2000502B5 /* Textfield.swift */; };
+		9B0198E32B83797E000502B5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0198E22B83797E000502B5 /* Friend.swift */; };
+		9B0198E52B837F46000502B5 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0198E42B837F46000502B5 /* FriendsView.swift */; };
+		9B0198E92B838358000502B5 /* FriendHaupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0198E82B838358000502B5 /* FriendHaupView.swift */; };
+		9B0198EB2B85F15E000502B5 /* Friendbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0198EA2B85F15E000502B5 /* Friendbutton.swift */; };
 		9B27AD732B625A7C00EB9F3E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27AD722B625A7C00EB9F3E /* HomeViewModel.swift */; };
 		9B2B640A2B7662BB0096A974 /* NofallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B64092B7662BB0096A974 /* NofallView.swift */; };
 		9B2B640D2B7666AD0096A974 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2B640C2B7666AD0096A974 /* SDWebImageSwiftUI */; };
@@ -76,6 +81,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B0198E02B835DC2000502B5 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
+		9B0198E22B83797E000502B5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		9B0198E42B837F46000502B5 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		9B0198E82B838358000502B5 /* FriendHaupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHaupView.swift; sourceTree = "<group>"; };
+		9B0198EA2B85F15E000502B5 /* Friendbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friendbutton.swift; sourceTree = "<group>"; };
 		9B27AD722B625A7C00EB9F3E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9B2B64092B7662BB0096A974 /* NofallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofallView.swift; sourceTree = "<group>"; };
 		9B2B64102B7670E50096A974 /* anima.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = anima.gif; sourceTree = "<group>"; };
@@ -157,6 +167,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B0198DF2B835DAC000502B5 /* Textfield */ = {
+			isa = PBXGroup;
+			children = (
+				9B0198E02B835DC2000502B5 /* Textfield.swift */,
+			);
+			path = Textfield;
+			sourceTree = "<group>";
+		};
+		9B0198E62B837F64000502B5 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				9B0198E72B837F6B000502B5 /* Views */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		9B0198E72B837F6B000502B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B0198E42B837F46000502B5 /* FriendsView.swift */,
+				9B0198E82B838358000502B5 /* FriendHaupView.swift */,
+				9B0198EA2B85F15E000502B5 /* Friendbutton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9B2B64122B79F9DF0096A974 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +214,7 @@
 			children = (
 				9B2B641C2B7A262B0096A974 /* Widget.swift */,
 				9B2B641E2B7B89E80096A974 /* Gpsdaten.swift */,
+				9B0198E22B83797E000502B5 /* Friend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,7 +372,6 @@
 		9B51EBF92B60D7ED003D087C /* Einstellungen */ = {
 			isa = PBXGroup;
 			children = (
-				9B51EBFB2B60D803003D087C /* Viewmodel */,
 				9B51EBFA2B60D7F9003D087C /* Views */,
 			);
 			path = Einstellungen;
@@ -347,13 +383,6 @@
 				9B51EBFC2B60D816003D087C /* Einstellungen.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		9B51EBFB2B60D803003D087C /* Viewmodel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Viewmodel;
 			sourceTree = "<group>";
 		};
 		9B51EBFE2B60DA13003D087C /* Tab */ = {
@@ -431,6 +460,7 @@
 		9B8B63EF2B6BABA400968734 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9B0198DF2B835DAC000502B5 /* Textfield */,
 				9B8B63F02B6BABAF00968734 /* Widgetsintern */,
 			);
 			path = Components;
@@ -512,6 +542,7 @@
 		9BF2ED6E2B736A8A00E50625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B0198E62B837F64000502B5 /* Friends */,
 				9BF2ED6F2B736A9500E50625 /* Minichat.swift */,
 				9BF2ED762B73C33C00E50625 /* StatusView.swift */,
 				9B2B64092B7662BB0096A974 /* NofallView.swift */,
@@ -707,6 +738,7 @@
 				9B2B64212B7C8A2C0096A974 /* chatfield.swift in Sources */,
 				9BF2ED772B73C33C00E50625 /* StatusView.swift in Sources */,
 				9BF50C692B63F79D00AB3FF4 /* SnowApiViewModel.swift in Sources */,
+				9B0198EB2B85F15E000502B5 /* Friendbutton.swift in Sources */,
 				9B51EB982B5FBB51003D087C /* LoginView.swift in Sources */,
 				9B51EBEC2B60D1B8003D087C /* User.swift in Sources */,
 				9B51EC0A2B60DE9B003D087C /* GespeicherteRessort.swift in Sources */,
@@ -717,8 +749,10 @@
 				9B51EBEA2B603C10003D087C /* RegistrierenView.swift in Sources */,
 				9B2B641D2B7A262B0096A974 /* Widget.swift in Sources */,
 				9B51EBF82B60D795003D087C /* Home.swift in Sources */,
+				9B0198E32B83797E000502B5 /* Friend.swift in Sources */,
 				9BF2ED6B2B735E7000E50625 /* MyBuddys.swift in Sources */,
 				9B51EC022B60DA41003D087C /* Tab.swift in Sources */,
+				9B0198E92B838358000502B5 /* FriendHaupView.swift in Sources */,
 				9B2B64162B79FA0D0096A974 /* SaveDetailView.swift in Sources */,
 				9B2B641A2B7A03C40096A974 /* SchneeMinMaxView.swift in Sources */,
 				9B8B63F32B6BABCD00968734 /* offnungszeiten.swift in Sources */,
@@ -730,12 +764,14 @@
 				9B51EC0E2B60E0B3003D087C /* Header.swift in Sources */,
 				9B51EBEE2B60D1EA003D087C /* UserViewModel.swift in Sources */,
 				9B2B640A2B7662BB0096A974 /* NofallView.swift in Sources */,
+				9B0198E12B835DC2000502B5 /* Textfield.swift in Sources */,
 				9B2B64182B7A009F0096A974 /* KarteView.swift in Sources */,
 				9B51EBAD2B5FCA93003D087C /* SnowAnima.swift in Sources */,
 				9B27AD732B625A7C00EB9F3E /* HomeViewModel.swift in Sources */,
 				9BF50C952B67D49900AB3FF4 /* RessortByIdView.swift in Sources */,
 				9B51EBFD2B60D816003D087C /* Einstellungen.swift in Sources */,
 				9BF2ED752B736CE500E50625 /* MyBuddysViewModel.swift in Sources */,
+				9B0198E52B837F46000502B5 /* FriendsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

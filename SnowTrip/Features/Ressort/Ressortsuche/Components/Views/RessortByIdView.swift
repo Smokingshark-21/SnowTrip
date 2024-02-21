@@ -11,6 +11,7 @@ struct RessortByIdView: View {
     @EnvironmentObject private var snowviewmodel : SnowApiViewModel
     @EnvironmentObject private var ressortviewmodel : RessortViewModel
     @EnvironmentObject private var userviewmodel : UserViewModel
+    @EnvironmentObject private var homeViewModel : HomeViewModel
     @State var zoom = false
     let id : String
     let name : String
@@ -88,7 +89,7 @@ struct RessortByIdView: View {
         .toolbar {
             Button {
                 ressortviewmodel.addresort(ressort: snowviewmodel.ressortbyid.first!)
-                userviewmodel.saveRessort(with: ressortviewmodel.resortlist)
+                userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeViewModel.widgetlist)
             } label: {
                 if ressortviewmodel.resortlist.contains(where: { $0.id == snowviewmodel.ressortbyid.first!.id }){
                     Image(systemName: "checkmark.square")
@@ -107,4 +108,5 @@ struct RessortByIdView: View {
         .environmentObject(SnowApiViewModel())
         .environmentObject(RessortViewModel())
         .environmentObject(UserViewModel())
+        .environmentObject(HomeViewModel())
 }

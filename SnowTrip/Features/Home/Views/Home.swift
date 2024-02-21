@@ -12,13 +12,15 @@ struct Home: View {
     @EnvironmentObject private var homeViewmodel: HomeViewModel
     @EnvironmentObject private var snowViewModel: SnowApiViewModel
     @EnvironmentObject private var ressortviewmodel : RessortViewModel
-   @State var aus = ""
+    @State var aus = ""
     var body: some View {
         ZStack{
+            
             Image("LoginRegister")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
                 .blur(radius: 3.0)
+            
             ScrollView{
                 
                 Header()
@@ -33,28 +35,26 @@ struct Home: View {
                 .foregroundColor(.black)
                 .pickerStyle(.palette)
                 
-                ScrollView {
-                    ForEach(homeViewmodel.widgetlist) { re in
-                        if re.name == aus {
-                            VStack {
-                                if re.offnung {
-                                    offnungszeiten(id: re.id)
-                                }
-                                if re.schnetiefe {
-                                    SchneeMinMaxView(id: re.id)
-                                }
-                                if re.karte {
-                                    KarteView(id: re.id)
-                                }
+                ForEach(homeViewmodel.widgetlist) { re in
+                    if re.name == aus {
+                        VStack {
+                            if re.offnung {
+                                offnungszeiten(id: re.id)
+                            }
+                            if re.schnetiefe {
+                                SchneeMinMaxView(id: re.id)
+                            }
+                            if re.karte {
+                                KarteView(id: re.id)
+                                
                             }
                         }
                     }
                 }
-                .scrollIndicators(.hidden)
-
+                
             }
             .scrollIndicators(.hidden)
-
+            
         }
         .onAppear{
             if ressortviewmodel.resortlist.isEmpty{

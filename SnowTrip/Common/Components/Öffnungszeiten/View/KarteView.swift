@@ -95,6 +95,7 @@ struct KarteView: View {
                         )
                 }placeholder: {
                     ProgressView()
+                        .padding()
                 }
             }
         }

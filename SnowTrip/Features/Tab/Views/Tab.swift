@@ -24,8 +24,11 @@ struct Tab: View {
             
             Ressortsuche()
                 .environmentObject(userViewModel)
-                .environmentObject(userViewModel)
+                .environmentObject(homeViewmodel)
+                .environmentObject(snowviewmodel)
+                .environmentObject(resortviewmodel)
                 .tabItem { Label("Suche", systemImage: "magnifyingglass") }
+            
             if resortviewmodel.resortlist.isEmpty{
                 
             }

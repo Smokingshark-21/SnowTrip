@@ -11,6 +11,7 @@ struct Ressortsuche: View {
     @EnvironmentObject private var userviewmodel : UserViewModel
     @EnvironmentObject private var snowviewmodel : SnowApiViewModel
     @EnvironmentObject private var ressortviewmodel : RessortViewModel
+    @EnvironmentObject private var homeViewModel : HomeViewModel
     @State var region = "usa"
     private var regi = ["northwest","southwest","rockies","midwest","northeast","southeast","usa","canada","europe"]
     var body: some View {
@@ -45,7 +46,8 @@ struct Ressortsuche: View {
                             NavigationLink( destination: RessortByIdView(id: re.id,name: re.resortName)
                                 .environmentObject(snowviewmodel)
                                 .environmentObject(ressortviewmodel)
-                                .environmentObject(userviewmodel)){
+                                .environmentObject(userviewmodel)
+                                .environmentObject(homeViewModel)){
                                 VStack{
                                     Text(re.resortName)
                                         .foregroundColor(.white.opacity(0.9))
@@ -78,4 +80,5 @@ struct Ressortsuche: View {
         .environmentObject(UserViewModel())
         .environmentObject(RessortViewModel())
         .environmentObject(SnowApiViewModel())
+        .environmentObject(HomeViewModel())
 }
