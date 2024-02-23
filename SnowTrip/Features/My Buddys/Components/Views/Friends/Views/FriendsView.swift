@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FriendsView: View {
+    @EnvironmentObject private var userviewmodel : UserViewModel
     @State var friend : Friend
     @State var standort = false
     var body: some View {
@@ -16,13 +17,25 @@ struct FriendsView: View {
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Divider()
             Toggle("Standort Teilen", isOn: $standort)
+            Divider()
+            Button(action: {
+                userviewmodel.deleteFriendFromFriendsList(friend.friendCode)
+            }, label: {
+                Image(systemName: "trash")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.red)
+                
+            })
         }
-        .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+        .padding()
+        .frame(width: 300, height: 20)
         .background(Color.black.opacity(0.4).cornerRadius(10))
         .padding()
     }
 }
 
 #Preview {
-    FriendsView(friend: Friend(id: "String", name: "test", gps: [Gpsdaten(longitude: "String", latitude: "String", status: 0)]))
+    FriendsView(friend: Friend(id: "String", name: "test", friendCode: "String", gps: [Gpsdaten(longitude: "String", latitude: "String", status: 0)]))
+        .environmentObject(UserViewModel())
 }

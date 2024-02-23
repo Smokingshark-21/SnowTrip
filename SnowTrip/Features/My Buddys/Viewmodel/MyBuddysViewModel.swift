@@ -11,7 +11,6 @@ import SwiftUI
 class MyBuddysViewModel : ObservableObject {
     
     @Published var status = 0
-
     
     func statusinttocolor()-> Color{
         switch status {

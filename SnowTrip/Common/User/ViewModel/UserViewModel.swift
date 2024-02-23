@@ -144,6 +144,9 @@ class UserViewModel: ObservableObject {
     }
     // GPS Freunde
     
+  
+    
+    
     private func freundesCodegen() -> String {
         var code: String
 
@@ -188,7 +191,7 @@ class UserViewModel: ObservableObject {
 
                 let gpsdaten = document["gps"] as? [Gpsdaten] ?? []
 
-                let friend = Friend(id: friendId, name: friendName ?? "", gps: gpsdaten)
+                let friend = Friend(id: friendId, name: friendName ?? "", friendCode: code, gps: gpsdaten)
                 
                 completion(friend)
             } catch {
@@ -197,6 +200,42 @@ class UserViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteFriendFromFriendsList(_ friendCode: String) {
+        FirebaseManager.shared.database.collection("users").whereField("freundesCode", isEqualTo: friendCode).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Fehler beim Abrufen der Daten: \(error)")
+                return
+            }
+
+            guard let document = querySnapshot?.documents.first else {
+                print("Freund mit dem Freundescode \(friendCode) nicht gefunden.")
+                return
+            }
+
+            let friendId = document.documentID
+            var friends = document["friends"] as? [[String: Any]] ?? []
+
+            // Suche den Freund in der Liste anhand des Freundescodes und entferne ihn
+            if let index = friends.firstIndex(where: { $0["friends"] as? String == friendCode }) {
+                friends.remove(at: index)
+
+                // Aktualisiere die Firestore-Daten mit der aktualisierten Freundesliste
+                FirebaseManager.shared.database.collection("users").document(friendId).setData(["friends": friends], merge: true) { error in
+                    if let error = error {
+                        print("Fehler beim Aktualisieren der Freundesliste: \(error)")
+                    } else {
+                        print("Freund mit dem Freundescode \(friendCode) erfolgreich aus der Freundesliste entfernt.")
+                    }
+                }
+            } else {
+                print("Freund mit dem Freundescode \(friendCode) nicht in der Freundesliste gefunden.")
+            }
+        }
+    }
+
+    
+   
     
     
 }

@@ -32,6 +32,7 @@ struct FriendHaupView: View {
                                 notbut.toggle()
                             }
                         }
+                        
                     }, label: {
                         Image(systemName: "plus.circle")
                             .resizable()
@@ -47,13 +48,8 @@ struct FriendHaupView: View {
                 ScrollView{
                     ForEach(userviewmodel.user?.friends ?? [] ,id: \.name) { friend in
                         FriendsView(friend: friend)
-                            .swipeActions{
-                                Button(action: {
-                                   // dell userviewmodel.user?.friends.
-                                }, label: {
-                                    Label("löschen",systemImage: "trash")
-                                })
-                            }
+                            .environmentObject(userviewmodel)
+                           
                         
                     }
                 }

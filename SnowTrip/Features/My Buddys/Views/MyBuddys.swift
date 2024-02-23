@@ -89,6 +89,15 @@ struct MyBuddys: View {
                     if !but {
                         Divider()
                             .frame(width: 50)
+                        NavigationLink(destination: FriendHaupView()) {
+                            Image(systemName: "person.circle")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                }
+                        .environmentObject(userviewmodel)
+                        
+                        Divider()
+                            .frame(width: 50)
                         Button(action: {
                             showingCredits.toggle()
                         }, label: {
@@ -97,14 +106,13 @@ struct MyBuddys: View {
                                 .frame(width: 30, height: 30)
                             
                         })
+                        
+                    
+                        
                         .sheet(isPresented: $showingCredits) {
                             VStack{
                                 StatusView()
                                 .environmentObject(myBuddyViewModel)
-                                
-                                Friendbutton()
-                                .environmentObject(userviewmodel)
-                                
                                 .presentationDetents(Set(heights))
                                 .presentationBackgroundInteraction(.enabled)
                                 
@@ -120,7 +128,7 @@ struct MyBuddys: View {
                 .background(.black)
                 .cornerRadius(10)
                 .foregroundColor(.gray)
-                .offset(x: but ? -71 : -150, y: -330)
+                .offset(x: but ? -71 : -150, y: -300)
                 
                 if myBuddyViewModel.status == 3 {
                     NofallView()
