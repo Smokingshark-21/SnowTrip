@@ -216,11 +216,9 @@ class UserViewModel: ObservableObject {
             let friendId = document.documentID
             var friends = document["friends"] as? [[String: Any]] ?? []
 
-            // Suche den Freund in der Liste anhand des Freundescodes und entferne ihn
             if let index = friends.firstIndex(where: { $0["friends"] as? String == friendCode }) {
                 friends.remove(at: index)
 
-                // Aktualisiere die Firestore-Daten mit der aktualisierten Freundesliste
                 FirebaseManager.shared.database.collection("users").document(friendId).setData(["friends": friends], merge: true) { error in
                     if let error = error {
                         print("Fehler beim Aktualisieren der Freundesliste: \(error)")
