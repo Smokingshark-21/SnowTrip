@@ -29,7 +29,7 @@ struct FriendsView: View {
             })
         }
         .padding()
-        .frame(width: 300, height: 20)
+        .frame(width: 300, height: 50)
         .background(Color.black.opacity(0.4).cornerRadius(10))
         .padding()
     }

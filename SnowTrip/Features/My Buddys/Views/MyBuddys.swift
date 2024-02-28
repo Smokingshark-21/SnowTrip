@@ -12,6 +12,7 @@ struct MyBuddys: View {
     @State private var selection: UUID?
     @StateObject private var myBuddyViewModel = MyBuddysViewModel()
     @EnvironmentObject private var userviewmodel : UserViewModel
+    @StateObject private var session = MultipeerSession()
     let locationManager = CLLocationManager()
     
     
@@ -95,6 +96,7 @@ struct MyBuddys: View {
                                 .frame(width: 30, height: 30)
                                 }
                         .environmentObject(userviewmodel)
+                        .environmentObject(session)
                         
                         Divider()
                             .frame(width: 50)
@@ -115,6 +117,9 @@ struct MyBuddys: View {
                                 .environmentObject(myBuddyViewModel)
                                 .presentationDetents(Set(heights))
                                 .presentationBackgroundInteraction(.enabled)
+                                // test
+                                Text("Connected Devices:")
+                                            Text(String(describing: session.connectedPeers.map(\.displayName)))
                                 
                             }
                         }

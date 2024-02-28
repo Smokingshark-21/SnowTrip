@@ -16,6 +16,7 @@ struct SnowTripApp: App {
         FirebaseApp.configure()
     }
     
+    @StateObject var Session = MultipeerSession()
     @StateObject private var userViewModel = UserViewModel()
     @StateObject private var homeViewModel = HomeViewModel()
     @StateObject private var resortviewmodel = RessortViewModel()

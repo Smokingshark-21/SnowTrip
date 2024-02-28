@@ -12,4 +12,8 @@ struct Friend :Codable,Identifiable {
     var name : String
     var friendCode : String
     var gps : [Gpsdaten]
+    
+    var description: String {
+            return "Friend(id: \(id), name: \(name), friendCode: \(friendCode), gps: \(gps))"
+        }
 }

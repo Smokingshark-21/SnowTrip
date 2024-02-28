@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FriendHaupView: View {
     @EnvironmentObject private var userviewmodel : UserViewModel
+    @EnvironmentObject private var session : MultipeerSession
+
     @State var code = ""
     @State var notbut = false
     var body: some View {
@@ -28,10 +30,15 @@ struct FriendHaupView: View {
                         userviewmodel.getFriendIfFriendCodeExists(code) { friend in
                             if let friend = friend {
                                 userviewmodel.saveFriend(with: [friend])
+                                userviewmodel.fetchUser(with: userviewmodel.user?.id ?? "")
+                                // test sseion
+                                session.sendOrUpdateFriend(friend: friend)
                             } else {
                                 notbut.toggle()
                             }
+                            
                         }
+                        
                         
                     }, label: {
                         Image(systemName: "plus.circle")
@@ -45,6 +52,7 @@ struct FriendHaupView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.black.cornerRadius(10))
                 .padding()
+                
                 ScrollView{
                     ForEach(userviewmodel.user?.friends ?? [] ,id: \.name) { friend in
                         FriendsView(friend: friend)
@@ -66,4 +74,5 @@ struct FriendHaupView: View {
 #Preview {
     FriendHaupView()
         .environmentObject(UserViewModel())
+        .environmentObject(MultipeerSession())
 }
