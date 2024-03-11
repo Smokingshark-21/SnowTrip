@@ -47,6 +47,13 @@ struct MyBuddys: View {
                         .edgesIgnoringSafeArea(.all)
                         .onAppear {
                             locationManager.requestWhenInUseAuthorization()
+//                            if let user = userviewmodel.user {
+//                                let gpsData = Gpsdaten(longitude: locationManager.location?.coordinate.longitude, latitude: locationManager.location?.coordinate.latitude, status: colorstate)
+//                                user.gps = gpsData
+//                            } else {
+//                                print("User is nil in the UserViewModel.")
+//                                // Handle the case where userviewmodel.user is nil
+//                            }
                         }
                     
                 }
@@ -90,13 +97,13 @@ struct MyBuddys: View {
                     if !but {
                         Divider()
                             .frame(width: 50)
-                        NavigationLink(destination: FriendHaupView()) {
+                        NavigationLink(destination: FriendHaupView().environmentObject(session).environmentObject(userviewmodel)) {
                             Image(systemName: "person.circle")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                                 }
-                        .environmentObject(userviewmodel)
-                        .environmentObject(session)
+                        
+                        
                         
                         Divider()
                             .frame(width: 50)
@@ -120,6 +127,8 @@ struct MyBuddys: View {
                                 // test
                                 Text("Connected Devices:")
                                             Text(String(describing: session.connectedPeers.map(\.displayName)))
+                                Text("Liste")
+                                Text(session.friends.description)
                                 
                             }
                         }

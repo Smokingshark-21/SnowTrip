@@ -202,7 +202,7 @@ class UserViewModel: ObservableObject {
     }
     
     func deleteFriendFromFriendsList(_ friendCode: String) {
-        FirebaseManager.shared.database.collection("users").whereField("friendeCode", isEqualTo: friendCode).getDocuments { (querySnapshot, error) in
+        FirebaseManager.shared.database.collection("users").whereField("\(user?.id)", isEqualTo: user?.id).whereField("friends", isEqualTo: friendCode).getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Fehler beim Abrufen der Daten: \(error)")
                 return
@@ -216,7 +216,7 @@ class UserViewModel: ObservableObject {
             let friendId = document.documentID
             var friends = document["friends"] as? [[String: Any]] ?? []
 
-            if let index = friends.firstIndex(where: { ($0["friendCode"] as? String) == friendCode }) {
+            if let index = friends.firstIndex(where: { ($0["freundesCode"] as? String) == friendCode }) {
                 friends.remove(at: index)
 
                 FirebaseManager.shared.database.collection("users").document(friendId).setData(["friends": friends], merge: true) { error in
@@ -231,6 +231,8 @@ class UserViewModel: ObservableObject {
             }
         }
     }
+
+
 
 
 

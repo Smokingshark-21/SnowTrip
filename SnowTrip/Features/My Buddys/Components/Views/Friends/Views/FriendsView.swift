@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FriendsView: View {
     @EnvironmentObject private var userviewmodel : UserViewModel
+    @EnvironmentObject private var session : MultipeerSession
     @State var friend : Friend
     @State var standort = false
     var body: some View {
@@ -27,6 +28,9 @@ struct FriendsView: View {
                     .foregroundColor(.red)
                 
             })
+//            if standort {
+//                session.sendOrUpdateFriend(friend: friend)
+//            }
         }
         .padding()
         .frame(width: 300, height: 50)
@@ -38,4 +42,5 @@ struct FriendsView: View {
 #Preview {
     FriendsView(friend: Friend(id: "String", name: "test", friendCode: "String", gps: [Gpsdaten(longitude: "String", latitude: "String", status: 0)]))
         .environmentObject(UserViewModel())
+        .environmentObject(MultipeerSession())
 }
