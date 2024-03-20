@@ -93,10 +93,10 @@ class UserViewModel: ObservableObject {
             print("Fehler: Der Benutzer ist nil.")
             return
         }
-               
-            user.savedressort = ressortadd
-            user.widgets = widget
-    
+        
+        user.savedressort = ressortadd
+        user.widgets = widget
+        
         do {
             try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user,merge : true)
         } catch let error {
@@ -109,9 +109,9 @@ class UserViewModel: ObservableObject {
             print("Fehler: Der Benutzer ist nil.")
             return
         }
-               
+        
         user.friends = Friend
-    
+        
         do {
             try FirebaseManager.shared.database.collection("users").document(user.id).setData(from: user,merge : true)
         } catch let error {
@@ -119,10 +119,10 @@ class UserViewModel: ObservableObject {
         }
     }
     
-
     
     
-     func fetchUser(with id: String) {
+    
+    func fetchUser(with id: String) {
         FirebaseManager.shared.database.collection("users").document(id).getDocument{ document, error in
             if let error {
                 print("Fetching user failed:",error.localizedDescription)
@@ -144,22 +144,22 @@ class UserViewModel: ObservableObject {
     }
     // GPS Freunde
     
-  
+    
     
     
     private func freundesCodegen() -> String {
         var code: String
-
+        
         repeat {
             code = String(format: "%05d", Int.random(in: 0..<100000))
         } while checkIfFriendCodeExists(code)
-
+        
         return code
     }
-
+    
     private func checkIfFriendCodeExists(_ code: String) -> Bool {
         var codeExists = false
-
+        
         FirebaseManager.shared.database.collection("users").whereField("friendCode", isEqualTo: code).getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Fehler beim Abrufen der Daten: \(error)")
@@ -167,30 +167,30 @@ class UserViewModel: ObservableObject {
                 codeExists = !querySnapshot!.isEmpty
             }
         }
-
+        
         return codeExists
     }
     
     
-     func getFriendIfFriendCodeExists(_ code: String, completion: @escaping (Friend?) -> Void) {
+    func getFriendIfFriendCodeExists(_ code: String, completion: @escaping (Friend?) -> Void) {
         FirebaseManager.shared.database.collection("users").whereField("freundesCode", isEqualTo: code).getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Fehler beim Abrufen der Daten: \(error)")
                 completion(nil)
                 return
             }
-
+            
             guard let document = querySnapshot?.documents.first else {
                 completion(nil)
                 return
             }
-
+            
             do {
                 let friendId = document.documentID
                 let friendName = document["name"] as? String
-
+                
                 let gpsdaten = document["gps"] as? [Gpsdaten] ?? []
-
+                
                 let friend = Friend(id: friendId, name: friendName ?? "", friendCode: code, gps: gpsdaten)
                 
                 completion(friend)
@@ -202,42 +202,36 @@ class UserViewModel: ObservableObject {
     }
     
     func deleteFriendFromFriendsList(_ friendCode: String) {
-        FirebaseManager.shared.database.collection("users").whereField("\(user?.id)", isEqualTo: user?.id).whereField("friends", isEqualTo: friendCode).getDocuments { (querySnapshot, error) in
+        let documentRef = FirebaseManager.shared.database.collection("users").document(user!.id)
+        print(documentRef.documentID)
+        documentRef.getDocument { document, error in
             if let error = error {
                 print("Fehler beim Abrufen der Daten: \(error)")
                 return
             }
-
-            guard let document = querySnapshot?.documents.first else {
-                print("Freund mit dem Freundescode \(friendCode) nicht gefunden.")
-                return
-            }
-
-            let friendId = document.documentID
-            var friends = document["friends"] as? [[String: Any]] ?? []
-
-            if let index = friends.firstIndex(where: { ($0["freundesCode"] as? String) == friendCode }) {
-                friends.remove(at: index)
-
-                FirebaseManager.shared.database.collection("users").document(friendId).setData(["friends": friends], merge: true) { error in
-                    if let error = error {
-                        print("Fehler beim Aktualisieren der Freundesliste: \(error)")
-                    } else {
-                        print("Freund mit dem Freundescode \(friendCode) erfolgreich aus der Freundesliste entfernt.")
-                    }
+            if let document = document, document.exists {
+                var newFriendsArray = self.user!.friends
+                let indexOfFriend = 0 //TODO: get correct index
+                newFriendsArray.remove(at: indexOfFriend)
+                
+                do {
+                    var updatedUser = try document.data(as: FireUser.self)
+                    updatedUser.friends = newFriendsArray
+                    try documentRef.setData(from: updatedUser)
                 }
-            } else {
-                print("Freund mit dem Freundescode \(friendCode) nicht in der Freundesliste gefunden.")
+                catch {
+                    print("Possible error")
+                }
             }
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
-
-
-
-
-
-    
-   
-    
-    
 }

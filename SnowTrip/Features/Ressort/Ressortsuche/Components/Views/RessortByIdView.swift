@@ -45,14 +45,21 @@ struct RessortByIdView: View {
                             if re.weekdayHours == ""{
                                 
                             }else {
-                                Text("Öffnungszeiten")
-                                    .foregroundColor(.white)
-                                Text(re.weekdayHours ?? "")
-                                    .foregroundColor(.white)
-                                Text(re.weekendHours ?? "")
-                                    .foregroundColor(.white)
+                                VStack{
+                                    Text("Öffnungszeiten")
+                                        .font(.title)
+                                        .foregroundColor(.white)
+                                    Text(re.weekdayHours ?? "")
+                                        .foregroundColor(.white)
+                                        .font(.callout)
+                                    Text(re.weekendHours ?? "")
+                                        .foregroundColor(.white)
+                                        .font(.callout)
+                                }
+                                .padding()
+                                .frame(width: 380, height: 90)
                             }
-                            
+        
                             Text("Nachtabfahrten")
                                 .foregroundColor(.white)
                             Text(re.nightSkiing ?? "" == "yes" ? "Ja" : "Nein")
@@ -91,7 +98,8 @@ struct RessortByIdView: View {
                 ressortviewmodel.addresort(ressort: snowviewmodel.ressortbyid.first!)
                 userviewmodel.saveRessort(with: ressortviewmodel.resortlist, widget: homeViewModel.widgetlist)
             } label: {
-                if ressortviewmodel.resortlist.contains(where: { $0.id == snowviewmodel.ressortbyid.first!.id }){
+                if ressortviewmodel.resortlist.contains(where: { $0.id == snowviewmodel.ressortbyid.first?.id }){
+                    
                     Image(systemName: "checkmark.square")
                         .foregroundColor(.green)
                 }else{

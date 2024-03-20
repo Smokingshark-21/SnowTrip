@@ -31,7 +31,6 @@ struct FriendHaupView: View {
                             if let friend = friend {
                                 userviewmodel.saveFriend(with: [friend])
                                 userviewmodel.fetchUser(with: userviewmodel.user?.id ?? "")
-                                // test sseion
                                 session.sendOrUpdateFriend(friend: friend)
                             } else {
                                 notbut.toggle()
@@ -61,6 +60,8 @@ struct FriendHaupView: View {
                         
                     }
                 }
+                .scrollIndicators(.hidden)
+                
 
             }
             .alert("Freund nicht gefunden oder Fehler beim Abrufen der Daten.",isPresented: $notbut){

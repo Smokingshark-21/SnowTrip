@@ -20,7 +20,9 @@ struct FriendsView: View {
             Toggle("Standort Teilen", isOn: $standort)
             Divider()
             Button(action: {
+                print(userviewmodel.user?.friends)
                 userviewmodel.deleteFriendFromFriendsList(friend.friendCode)
+                print(userviewmodel.user?.friends)
             }, label: {
                 Image(systemName: "trash")
                     .resizable()

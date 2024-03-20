@@ -22,7 +22,6 @@ class Searchrepo {
         guard let url = URL(string: urlString) else {
             throw HTTPError.invalidURL
         }
-        print(url)
         
         let (data, _ ) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(regioresponse.self, from: data).items
@@ -36,7 +35,6 @@ class Searchrepo {
         guard let url = URL(string: urlString) else {
             throw HTTPError.invalidURL
         }
-        print(url)
         
         let (data, _ ) = try await URLSession.shared.data(from: url)
         let response = try JSONDecoder().decode(Idresponse.self, from: data)
